@@ -26,5 +26,7 @@ jobs:
           cp -R ami/packer/* .
       - name: Run packer
         run: |
+          echo $AZURE_CLIENT_ID
+          echo $AZURE_TENANT_ID
           VERSION=${{ github.run_number }}
           ./packer build -var build_id=$VERSION ${{ matrix.variants }}.json
