@@ -2,6 +2,9 @@ name: Manual Azure build for STGN
 
 on: [workflow_dispatch]
 
+permissions:
+  id-token: write
+  contents: read
 jobs:
   azure-image-build:
     defaults:
