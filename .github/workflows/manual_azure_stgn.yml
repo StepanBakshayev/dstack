@@ -23,11 +23,11 @@ jobs:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-      - uses: actions/checkout@v3
       - name: 'Run az commands'
         run: |
           az account show
           az group list
+      - uses: actions/checkout@v3
       - name: Download packer
         run: |
           wget https://releases.hashicorp.com/packer/1.8.0/packer_1.8.0_linux_amd64.zip
